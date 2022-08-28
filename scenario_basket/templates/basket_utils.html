@@ -1,0 +1,40 @@
+{% macro render_item(item, show_form=False) %}
+<div style="border-style: solid; border-color: beige;
+ background: beige; margin: 5px">
+    <p>
+        <span>Название товара: {{ item['product_name'] }}</span>
+        <span>Единица измерения: {{ item['units'] }}</span>
+        <span>Категория: {{ item['category'] }}</span>
+        <span>Цена: {{ item['price_product'] }}</span>
+    </p>
+    {% if show_form %}
+    <div>
+        <form action="" method="post">
+            <input type="submit" name="insert" value="Добавить">
+            <input type="hidden" name="id_pr" value="{{ item['product_id'] }}">
+        </form>
+    </div>
+    {% endif %}
+</div>
+{% endmacro %}
+{% macro render_basket_item(item, show_form=False) %}
+<div style="border-style: solid; border-color: bisque;
+ background: bisque; margin: 5px">
+    <p>
+        <span>Название товара: {{ item['product_name'] }}</span>
+        <span>Единица измерения: {{ item['units'] }}</span>
+        <span>Категория: {{ item['category'] }}</span>
+        <span>Цена: {{ item['price_product'] }}</span>
+        <span>Количество товара: {{ item['pr_amount'] }}</span>
+    </p>
+    {% if show_form %}
+    <div>
+        <form action="" method="post">
+            <input type="submit" name="insert" value="Добавить">
+            <input type="submit" name="delete" value="Убрать">
+            <input type="hidden" name="id_pr" value="{{ item['product_id'] }}">
+        </form>
+    </div>
+    {% endif %}
+</div>
+{% endmacro %}
