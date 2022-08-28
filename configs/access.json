@@ -1,0 +1,22 @@
+{
+  "worker": [
+    "",
+    "auth_app",
+    "basket_app"
+  ],
+  "admin": [
+    "",
+    "auth_app",
+    "basket_app",
+    "storage_app"
+  ],
+    "analytics": [
+    "",
+    "auth_app",
+    "storage_app"
+  ],
+  "unauthorized": [
+    "",
+    "auth_app"
+  ]
+}
